@@ -1,0 +1,14 @@
+services:
+  dev:
+    image: rust:1
+    working_dir: /app
+    volumes:
+      - ./:/app                                   
+      - cargo-registry:/usr/local/cargo/registry   
+      - target:/app/target                       
+    stdin_open: true
+    tty: true
+
+volumes:
+  cargo-registry:
+  target:
